@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+        <p id="fact"></p>
+
+        <script>
+
+
+            let fact = document.querySelector('#fact')
+        const URL = "https://jsonplaceholder.typicode.com/posts";
+
+        (async () => {
+            console.log("getting data .....");
+            let response = await fetch(URL);
+            console.log(response); //JSON format
+
+            let data = await response.json();
+            // console.log(data[0].body);
+            fact.innerText = data[1 ].body;
+        })();
+
+
+    </script>
+
+  </body>
+</html>

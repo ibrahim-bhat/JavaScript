@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="btn1">click me</button>
+
+      <p>
+        In JavaScript, an event object is an object that contains information
+        about an event that has occurred. It is automatically passed as an
+        argument to the event handler function when the event is triggered. Key
+        points about event objects: Information: They provide details about the
+        event, such as: The type of event (e.g., 'click', 'mousemove',
+        'keydown') The target element that triggered the event The coordinates
+        of the mouse pointer (for mouse events) The key code pressed (for
+        keyboard events) Timestamps
+      </p>
+    </div>
+
+    <script>
+      let btn = document.getElementById("btn1");
+
+      btn.onclick = (e) => {
+        console.log("button clicked");
+        console.log(e);
+        console.log(e.type);
+        console.log(e.target);
+        console.log(e.clientX, e.clientY);
+      };
+
+      // let p = document.body.firstElementChild;
+      let p = document.querySelector("div");
+      p.onmouseover = (e) => {
+        console.log(e);
+        console.log(e.innerHTML);
+                console.log("button clicked");
+        console.log(e);
+        console.log(e.type);
+        console.log(e.target);
+        console.log(e.clientX, e.clientY);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Examples</title>
+</head>
+<body>
+    <h2>JavaScript Event Examples</h2>
+
+    <!-- Mouse Events -->
+    <h3>Mouse Events</h3>
+    <button id="clickBtn">Click Me</button>
+    <button id="dblClickBtn">Double Click Me</button>
+    <div id="hoverDiv" style="width: 200px; height: 100px; background: lightblue; margin: 10px;">
+        Hover over me
+    </div>
+
+    <!-- Keyboard Events -->
+    <h3>Keyboard Events</h3>
+    <input type="text" id="textInput" placeholder="Type something..." />
+
+    <!-- Form Events -->
+    <h3>Form Events</h3>
+    <form id="sampleForm">
+        <input type="text" name="name" placeholder="Enter your name" />
+        <select name="options">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Window Events -->
+    <h3>Window Events</h3>
+    <p>Resize the window or scroll down to see effects.</p>
+
+    <script>
+        // **Mouse Events**
+        let clickBtn = document.getElementById("clickBtn");
+        clickBtn.addEventListener("click", () => {
+            console.log("Button clicked!");
+        });
+
+        let dblClickBtn = document.getElementById("dblClickBtn");
+        dblClickBtn.addEventListener("dblclick", () => {
+            console.log("Button double-clicked!");
+        });
+
+        let hoverDiv = document.getElementById("hoverDiv");
+        hoverDiv.addEventListener("mouseover", () => {
+            console.log("Mouse is over the div!");
+        });
+        hoverDiv.addEventListener("mouseout", () => {
+            console.log("Mouse left the div!");
+        });
+
+        // **Keyboard Events**
+        let textInput = document.getElementById("textInput");
+        textInput.addEventListener("keypress", (event) => {
+            console.log("Key pressed:", event.key);
+        });
+        textInput.addEventListener("keydown", (event) => {
+            console.log("Key down:", event.key);
+        });
+        textInput.addEventListener("keyup", (event) => {
+            console.log("Key up:", event.key);
+        });
+
+        // **Form Events**
+        let sampleForm = document.getElementById("sampleForm");
+        sampleForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form submission
+            console.log("Form submitted!");
+        });
+        sampleForm.addEventListener("change", () => {
+            console.log("Form value changed!");
+        });
+        sampleForm.querySelector("input[name='name']").addEventListener("focus", () => {
+            console.log("Input field focused!");
+        });
+
+        // **Window Events**
+        window.addEventListener("load", () => {
+            console.log("Window fully loaded!");
+        });
+        window.addEventListener("resize", () => {
+            console.log("Window resized!");
+        });
+        window.addEventListener("scroll", () => {
+            console.log("Page scrolled!");
+        });
+    </script>
+</body>
+</html>

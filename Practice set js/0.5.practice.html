@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar container */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Logo */
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* Navbar links */
+        .navbar ul {
+        /* background-color: blue; */
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect on links */
+        .navbar ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Mobile menu toggle button */
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            /* Hide links and show toggle on mobile */
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            .navbar ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .navbar .menu-toggle {
+                display: block;
+            }
+
+            /* Show menu when toggle is clicked */
+            .navbar ul.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">MyWebsite</div>
+
+        <!-- Navbar links -->
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Toggle button for mobile view -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+
+    <!-- <script src="./0.5practiceset.js"></script> -->
+    <script src="./0.5.1practice.js"></script>
+
+    <script>
+
+        // Function to toggle menu visibility on mobile
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

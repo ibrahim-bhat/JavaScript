@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>
+        In JavaScript, an event listener is a function that "listens" for a specific event to occur on a particular element or object, and then executes a specified action when that event happens.
+
+        Events: Events are actions that happen on a web page, like clicking a button, moving the mouse, or submitting a form.
+Listener: The listener is the function that waits for the event to occur. 
+Adding an event listener: You use the addEventListener() method to attach an event listener to an element. 
+      </p>
+      <button id="btn1">click me</button>
+
+      <script>
+        let btn = document.getElementById("btn1");
+
+        let event = () => {
+          console.log("button clicked");
+        };
+        let event2 = () => {
+          console.log("button clicked");
+        };
+
+         btn.addEventListener("click", event);  // it will ignore if here we will user same parameter with same func
+
+        btn.addEventListener("mouseout", event);  //mouseover , mouseout , click
+         btn.addEventListener("click", event2);
+
+
+        //  removing event listner 
+        btn.removeEventListener ('click' , event2) 
+
+      </script>
+    </div>
+  </body>
+</html>
