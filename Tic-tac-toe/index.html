@@ -1,110 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background: #f4f4f4;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      color: #ffffff;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+    }
+
+    #winner {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #fffa65;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 120px);
+      grid-template-rows: repeat(3, 120px);
+      gap: 10px;
+    }
+
+    .cell {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fffa65;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .cell:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+    }
+
+    .cell.filled {
+      pointer-events: none;
+      background: rgba(255, 255, 255, 0.7);
+      color: #1d2b64;
+    }
+
+    #reset {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1d2b64;
+      background: #fffa65;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #reset:hover {
+      background: #f8cdda;
+      color: #ffffff;
+    }
+
+    #reset:active {
+      transform: scale(0.95);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 16px;
+    }
+
+    footer a {
+      color: #fffa65;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #f8cdda;
+    }
+       /* Media query for smaller screens */
+    @media (max-width: 600px) {
+      .title {
+        font-size: 2rem;
+      }
+
+      #winner {
+        font-size: 1.2rem;
       }
 
       .container {
-        display: grid;
-        grid-template-columns: repeat(3, 100px);
-        grid-template-rows: repeat(3, 100px);
-        gap: 5px;
+        gap: 3%;
       }
 
       .cell {
-        width: 100px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid #333;
-        background: white;
-        font-size: 2rem;
-        font-weight: bold;
-        cursor: pointer;
-        user-select: none;
-      }
-
-      .cell:hover {
-        background: #e0e0e0;
-      }
-
-      .cell.filled {
-        pointer-events: none;
-      }
-
-      .title {
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-      #winner {
-        color: green;
-        text-align: center;
+        font-size: 1rem;
       }
 
       #reset {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        background-color: #007bff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+        font-size: 0.9rem;
+        padding: 8px 15px;
       }
 
-      #reset:hover {
-        background-color: #0056b3;
+      footer {
+        font-size: 0.8rem;
       }
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Tic Tac Toe</div>
+  <div id="winner"></div>
+  <div class="container">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <button id="reset">Reset Game</button>
+  <footer><a href="https://ibrahimbhat.com">ibrahimbhat.com</a></footer>
 
-      #reset:active {
-        background-color: #004080;
-      }
-
-      footer{
-        text-align: center;
-        margin-top: 120px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="title">Tic Tac Toe</div>
-    <div
-      id="winner"
-      style="font-size: 20px; margin-bottom: 10px; font-weight: bold"
-    ></div>
-    <div class="container">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-    </div>
-
-    <button id="reset">Reset Game</button>
-
-
-    <footer ><a href="https://ibrahimbhat.com">ibrahimbhat.com</a></footer>
-    <script src="./script.js"></script>
-  </body>
+  <script src="./script.js"></script>
+</body>
 </html>
