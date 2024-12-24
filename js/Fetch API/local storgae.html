@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Local storage is a feature that allows websites to store data on a user's
+      device: JavaScript A built-in feature of web browsers that allows
+      developers to store data in the user's browser. Local storage is a
+      reliable solution for small amounts of data, like key-value assignments.
+      It's a good tool for applications that need to save user preferences or
+      data locally, such as a to-do list application.
+
+      Note : both key and value must be string ,
+      we can you json method to store object in the local storage 
+    </p>
+
+    <script>
+        
+        localStorage.setItem("name" , "ibrahim"); //used to store data in local storage it store ley and value..
+        localStorage.setItem("name2" , "khushboo");
+        localStorage.setItem("name3" , "mama");
+
+       console.log(localStorage.getItem("name")); //to print any value
+       
+       console.log(localStorage.key(0));  //accessing thorugh indexing
+
+       setTimeout(() => {
+           localStorage.removeItem("name");  // for removing any item
+       }, 4000);
+
+       setTimeout(() =>{
+        localStorage.clear(); // for clearing all items
+       }, 7000);
+
+
+
+    </script>
+  </body>
+</html>

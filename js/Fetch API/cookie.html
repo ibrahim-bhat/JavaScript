@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      cookies are small pieces of data that websites store on a user's computer.
+      They are used to remember information about the user, such as login
+      details, preferences, or shopping cart items. Key Points: Storage: Cookies
+      are stored as key-value pairs in the user's browser. Access: JavaScript
+      can access and manipulate cookies using the document.cookie property.
+      Purpose: Cookies are commonly used for: User authentication: Storing login
+      details to keep users logged in. Session management: Tracking user
+      sessions across different pages. Personalization: Remembering user
+      preferences to customize website content. Tracking: Monitoring user
+      behavior for analytics purposes (with user consent).
+
+      NOTE :- the nam e= value pair s, after the encode URI component dhousl not be exceed to 4kb ,
+              the no of cookies per domain is limited to around 20 + ( exact number is browser dependent)
+    </p>
+    <script>
+      document.cookie = " name = ibrahim ";
+      document.cookie = " name2 = Khushboo ";
+      document.cookie = " name = ibrahim bhat ";
+
+    //   let key = prompt("Enter you key");
+    //   let value = prompt("Enter you value");
+    //   console.log(
+    //     (document.cookie = ` ${encodeURIComponent(key)} = ${encodeURIComponent(
+    //       value
+    //     )} `)
+    //   ); //Encode URI components
+
+    document.cookie = "username=time; expires=Tue, 24 Dec 2024 12:37:00 UTC; path=/";
+    console.log(document.cookie);
+
+      //   alert(document.cookie);
+    </script>
+  </body>
+</html>

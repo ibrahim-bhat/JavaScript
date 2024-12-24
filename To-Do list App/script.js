@@ -18,6 +18,9 @@ btn.addEventListener("click", function () {
   newli.classList.add("li");
   list.appendChild(newli);
   newli.textContent = addText;
+  let num = localStorage.length + 1;
+  localStorage.setItem(`todolist${num}` , addText);
+  num ++;
   input.value = "";
 
   //Date
@@ -40,6 +43,7 @@ newli.appendChild(dateEle);
   newli.appendChild(deleteBtn);
   deleteBtn.addEventListener("click", function () {
     newli.remove();
+    // localStorage.removeItem(addText);
   });
 
   //Done btn

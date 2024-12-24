@@ -1,0 +1,11 @@
+Cookies Vs LocalStorage Vs SessionStorage | by Puneet Ahuja ...The key difference between local storage and cookies is that local storage allows for larger amounts of data to be stored persistently in a user's browser without an expiration date, while cookies are smaller text files that can be read by the server and often have a set expiration time, making them better suited for temporary session data like login status; local storage data is only accessible by the client-side JavaScript, not the server. 
+Key points to remember:
+Data size:
+Local storage can store significantly more data than cookies, which usually have a limit around 4KB per cookie. 
+Expiration:
+Local storage data persists until manually deleted, while cookies can be set to expire after a specific time or when the browser session ends. 
+Server access:
+Cookies can be read by the server with each HTTP request, whereas local storage data is only accessible by the client-side JavaScript. 
+Use cases:
+Local storage: Storing user preferences like theme color, saved game data, or application settings that need to persist across sessions. 
+Cookies: Maintaining login sessions, tracking user activity on a website, or storing small pieces of information needed for personalization. 
