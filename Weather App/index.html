@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <i class="bx bxs-cloud bx-tada"></i>
+      <h1>Weather<span>Dashboard</span></h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="city-input" placeholder="Search for a city..."> <button id="search-btn">
+        <i class="bx bx-search-alt"></i> Search
+      </button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Current Weather Section -->
+<section class="current-weather">
+  <h2>Current Weather</h2>
+  <div class="weather-details">
+    <div class="weather-icon">
+      <img src="" alt="Weather Icon searching" id="weather-icon">
+    </div>
+    <div class="weather-info">
+      <h3 id="city-name">Search for your city...</h3>
+      <p id="temperatureC">Searching...</p>
+      <p id="temperatureF">Searching...</p>
+      <p id="description">Searching...</p>
+    </div>
+  </div>
+  <button id="favorite-btn">
+  <i class='bx bx-bookmark-heart'></i> Add this city to favorite
+</button>
+</section>
+
+
+
+    <!-- Favorite Locations Section -->
+    <section class="favorites">
+      <h2><i class="bx bxs-heart"></i> Favorite Locations</h2>
+      <div class="favorites-list" id="fav-list">
+        <p><i class="bx bx-info-circle"></i> No favorite locations added yet.</p>
+      </div>
+    </section>
+
+    <!-- Hourly Forecast Section -->
+    <section class="hourly-forecast">
+      <h2><i class="bx bx-time-five"></i> Hourly Forecast</h2>
+      <div class="forecast-grid" id="hourly-forecast">
+        <!-- Cards will be dynamically added -->
+      </div>
+    </section>
+
+    <!-- Weekly Forecast Section -->
+    <section class="weekly-forecast">
+      <h2><i class="bx bx-calendar"></i> Weekly Forecast</h2>
+      <div class="forecast-grid" id="weekly-forecast">
+        <!-- Cards will be dynamically added -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Weather Dashboard | Made by <a href="https://ibrahimbhat.com">Ibrahim</a></p>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>

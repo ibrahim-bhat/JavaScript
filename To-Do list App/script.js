@@ -43,7 +43,6 @@ function createListItem(text, key) {
   newli.appendChild(doneBtn);
 }
 
-// Load existing tasks from localStorage on page load
 window.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
