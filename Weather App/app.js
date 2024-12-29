@@ -10,6 +10,7 @@ const inputSearch = document.querySelector("#city-input");
 const searchButton = document.querySelector("#search-btn");
 
 const favBtn = document.querySelector("#favorite-btn");
+const favList = document.querySelector("#fav-list");
 
 searchButton.addEventListener("click", function () {
   let city = inputSearch.value.trim();
@@ -78,7 +79,6 @@ searchButton.addEventListener("click", function () {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
-  const favList = document.querySelector("#fav-list");
 
   if (favList) {
     let hasFavorites = false;
@@ -117,12 +117,20 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// remove fav list card
+
+favList.addEventListener('click' , function(e){
+  if(e.target.classList.contains("remove-btn")){
+      
+  }
+})
+
+
 
 
 function recieve(recivedCity) {
   favBtn.addEventListener("click", function () {
     let favCity = recivedCity;
-    const favList = document.querySelector("#fav-list");
     const key = `city${localStorage.length + 1}`;
     localStorage.setItem(key, favCity);
     location.reload();
